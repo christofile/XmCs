@@ -1,12 +1,9 @@
 package L0Miniproject;
 
 import java.util.*;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 import java.io.*;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
-import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.stream.XMLEventReader;
 import javax.xml.stream.XMLInputFactory;
 import javax.xml.stream.events.XMLEvent;
@@ -14,7 +11,7 @@ import javax.xml.stream.events.XMLEvent;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
-import org.xml.sax.SAXException;
+
 
 public class LogAnalysis {
 	public static void main(String args[]) throws IOException{
@@ -134,7 +131,11 @@ public class LogAnalysis {
 									System.out.println(str);
 							}
 						}
+
 						br.close();
+					}
+					else if(f.isDirectory()) {
+						getAppInfo(f);
 					}
 			}
     }
@@ -192,6 +193,9 @@ public class LogAnalysis {
 							}
 					}
 					br.close();
+				}
+				else if(f.isDirectory()) {
+					getPolicy(f);
 				}
     			}
     }		
@@ -264,9 +268,13 @@ public class LogAnalysis {
 							   System.out.println("exception:" + e.getMessage());
 						}
 				}
+
 				br.close();
 			}
+			else if(f.isDirectory()) {
+				getConfig(f);
 			}
+		}
 }
 
     public static void getError(File filePath) throws IOException {
@@ -304,6 +312,9 @@ public class LogAnalysis {
 				
 				br.close();
 				}
+			}
+			else if(f.isDirectory()) {
+				getError(f);
 			}
 		}
 			System.out.println("Total exceptions:"+exceptions);
