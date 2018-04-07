@@ -1,4 +1,4 @@
-package L1S9;
+package L1S8;
 import java.util.Random;
 
 class RandomNum{
