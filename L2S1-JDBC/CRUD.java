@@ -20,7 +20,7 @@ public class CRUD {
 	        System.out.println("Insert table successfully!");
 	        
 	        //update employee record
-	        stmt.executeUpdate("Update DATA set Age=31 where Firstname='Lily'");
+	        stmt.executeUpdate("Update DATA set Age=30 where Firstname='Lily'");
 	        System.out.println("Update table successfully!");
 	        
 	        //read employee records
