@@ -1,0 +1,5 @@
+[DEBUG] 2018-05-17 01:06:49.158 [main] Log4jDemo - Debug Message Logged !!!
+[INFO ] 2018-05-17 01:06:49.162 [main] Log4jDemo - Info Message Logged !!!
+[WARN ] 2018-05-17 01:06:49.163 [main] Log4jDemo - Warn Message Logged !!!
+[FATAL] 2018-05-17 01:06:49.163 [main] Log4jDemo - Fatal Message Logged !!!
+[ERROR] 2018-05-17 01:06:49.163 [main] Log4jDemo - Error Message Logged !!!

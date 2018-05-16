@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="warn">
+    <Properties>
+        <Property name="basePath">/Users/imbean/eclipse-workspace/CodeSmart/src/log4j</Property>
+    </Properties>
+ 	<Filter type="ThresholdFilter" level="all"/>
+    <Appenders>
+        <RollingFile name="log4j-test" filePattern="${basePath}/XMCSsample-%d{yyyy-MM-dd}.log">
+            <PatternLayout>
+                <pattern>[%-5level] %d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %c{1} - %msg%n</pattern>
+            </PatternLayout>
+            <Policies>
+                <SizeBasedTriggeringPolicy size="10 MB"/>
+            </Policies>
+            <DirectWriteRolloverStrategy maxFiles="100"/>
+        </RollingFile>
+ 
+        <Console name="console" target="SYSTEM_OUT">
+            <PatternLayout   pattern="[%-5level] %d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %c{1} - %msg%n" />
+        </Console>
+    </Appenders>
+    <Loggers>
+        <Root level="debug">
+            <Appender-ref ref="log4j-test"/>
+        </Root>
+    </Loggers>
+</Configuration>
